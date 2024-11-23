@@ -18,7 +18,7 @@ void convert2Bytes(void* value, const char* valueStr) {
 }
 
 void convert4Bytes(void* value, const char* valueStr) {
-    *(int*)value = atoi(valueStr);
+    *(long*)value = atoi(valueStr);
 }
 
 void convert8Bytes(void* value, const char* valueStr) {
