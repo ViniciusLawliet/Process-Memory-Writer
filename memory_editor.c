@@ -86,16 +86,6 @@ int main(int argc, char* argv[]) {
     // Validate input arguments
     if (argc != 6) {
         printf("Usage: %s <process_name> <module_name> <hex_offset> <type> <value>\n", argv[0]);
-        printf("Available data types:\n");
-        printf("1. Binary (1 byte): Used for binary values (0 or 1).\n");
-        printf("2. Byte (1 byte): Used for small integers or single bytes.\n");
-        printf("3. 2 Bytes (2 bytes): Used for short integers.\n");
-        printf("4. 4 Bytes (4 bytes): Used for standard integers.\n");
-        printf("5. 8 Bytes (8 bytes): Used for long integers or large values.\n");
-        printf("6. Float (4 bytes): Used for single-precision floating-point numbers.\n");
-        printf("7. Double (8 bytes): Used for double-precision floating-point numbers.\n");
-        printf("8. String (variable size): Used for text values.\n");
-        printf("9. Array of byte (variable size): Used for arrays of raw bytes.\n");
         return 1;
     }
 
@@ -131,6 +121,16 @@ int main(int argc, char* argv[]) {
     int typeSize = convertValue(typeName, valueStr, &value);
     if (typeSize == -1) {
         printf("Invalid type specified.\n");
+        printf("Available data types:\n");
+            printf("\t1. \"Binary\"        (1 byte): Used for binary values (0 or 1).\n");
+            printf("\t2. \"Byte\"          (1 byte): Used for small integers or single bytes.\n");
+            printf("\t3. \"2 Bytes\"       (2 bytes): Used for short integers.\n");
+            printf("\t4. \"4 Bytes\"       (4 bytes): Used for standard integers.\n");
+            printf("\t5. \"8 Bytes\"       (8 bytes): Used for long integers or large values.\n");
+            printf("\t6. \"Float\"         (4 bytes): Used for single-precision floating-point numbers.\n");
+            printf("\t7. \"Double\"        (8 bytes): Used for double-precision floating-point numbers.\n");
+            printf("\t8. \"String\"        (variable size): Used for text values.\n");
+            printf("\t9. \"Array of byte\" (variable size): Used for arrays of raw bytes.\n");
         return 1;
     }
 
